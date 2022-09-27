@@ -1,10 +1,11 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import logo from './logo.svg';
+import logo from './logo.png';
 import './App.css';
 import LoginSignup from './Pages/LoginPage/LoginSignup';
 import Admin from './Pages/AdminPage/Admin';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Provider from './Pages/ProviderPage/Provider';
+import Land from './Pages/Land';
 function App() {
   return (
     <div className="App">
@@ -23,6 +24,7 @@ function App() {
         </a>
       </header> */}
       <Routes>
+        <Route path='/' exact element={<Land></Land>}></Route>
         <Route path="/admin" exact element={<Admin />} />
         <Route path='/login-signup' exact element={<LoginSignup />} /> 
         <Route path='/provider' exact element={<Provider />} /> 

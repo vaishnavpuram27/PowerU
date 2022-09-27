@@ -1,0 +1,61 @@
+.Land-logo {
+    height: 8vmin;
+    pointer-events: none;
+    padding-bottom: 0.5em;
+    margin-left: 0.5em;
+  }
+  
+  .Land-header {
+    background-color: #000;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    color: white;
+    padding: 0em;
+  }
+  
+  span {
+    margin-left: 0.5em;
+    /* font-style: italic; */
+    font-weight: bolder;
+    font-size: xx-large;
+  }
+  
+  .hero {
+    display: flex;
+    flex-direction: column;
+    padding: 5%;
+    align-items: center;
+    text-align: center;
+  }
+  
+  
+  .title {
+      font-size: 96px;
+      /* font-style: italic; */
+      font-weight: bolder;
+      line-height: 1.1;
+      margin: 30px;
+      padding: 0px; color: #2A83B6;
+  }
+  
+  @media (max-width: 755px) {
+    .title {
+      font-size: 68px;
+      line-height: 1.2;
+    }
+  }
+  
+  .subtitle {
+    font-weight: bold;
+    font-size: xx-large;
+    margin: 0.5em 0;
+    padding-top: 0%;
+  }
+  
+  .intro {
+    color: #073047;
+    font-style: italic; 
+  }
+  
