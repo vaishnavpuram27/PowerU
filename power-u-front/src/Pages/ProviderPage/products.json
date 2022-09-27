@@ -1,0 +1,70 @@
+[{
+    "title": "Battery x",
+    "image": "/images/battery.png",
+    "id": "battery",
+    "description": "2000mah fully charged premium battery",
+    "price": "2000",
+    "provider" : "X",
+    "email" : "x@gmail.com",
+    "count" : 10,
+    "capacity" : "12V"
+  },
+
+  {
+    "title": "Battery x",
+    "image": "/images/battery.png",
+    "id": "battery",
+    "description": "2000mah fully charged premium battery",
+    "price": "2000",
+    "provider" : "X",
+    "email" : "x@gmail.com",
+    "count" : 10,
+    "capacity" : "12V"
+  },
+  {
+    "title": "Battery x",
+    "image": "/images/battery.png",
+    "id": "battery",
+    "description": "2000mah fully charged premium battery",
+    "price": "2000",
+    "provider" : "X",
+    "email" : "x@gmail.com",
+    "count" : 10,
+    "capacity" : "12V"
+  },
+
+  {
+    "title": "Battery y",
+    "image": "/images/battery.png",
+    "id": "battery",
+    "description": "2000mah fully charged premium battery",
+    "price": "1000",
+    "provider" : "Y",
+    "email" : "x@gmail.com",
+    "count" : 6,
+    "capacity" : "15V"
+  },
+  {
+    "title": "Battery z",
+    "image": "/images/battery.png",
+    "id": "battery",
+    "description": "2000mah fully charged premium battery",
+    "price": "1500",
+    "provider" : "Z",
+    "email" : "x@gmail.com",
+    "count" : 15,
+    "capacity" : "20V"
+  },
+
+  {
+    "title": "Battery x",
+    "image": "/images/battery.png",
+    "id": "battery",
+    "description": "2000mah fully charged premium battery",
+    "price": "2000",
+    "provider" : "X",
+    "email" : "x@gmail.com",
+    "count" : 10,
+    "capacity" : "12V"
+  }
+]

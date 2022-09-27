@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './AdminPage.css';
 import {Tabs,Tab} from 'react-bootstrap'
+import NewReg from './NewReg';
+import CustomerCards from './CustomerCards';
+import BatteriesInfo from './BatteriesInfo';
 
 
 function AdminPage() {
@@ -39,16 +42,15 @@ function AdminPage() {
       </nav>
       <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example" className="mb-3">
         <Tab eventKey="customer-details" title="Customer Details">
-          {/* <AdminCus /> */}
-          hello
+
+          <CustomerCards />
         </Tab>
-        <Tab eventKey="pro-verify" title="Professional Verification">
-        {/* <AdminPro /> */}
-        hellofsd
+        <Tab eventKey="pro-verify" title="Provider Registration">
+        <NewReg/>
         </Tab>
-        <Tab eventKey="customer-req" title="Customer Requests" >
-        {/* <AdminContact /> */}
-        Customer
+        <Tab eventKey="customer-req" title="Batteries Information" >
+
+        <BatteriesInfo/>
         </Tab>
         <Tab eventKey="pro-req" title="Professional Requests">
         {/* <AdminProContact /> */}

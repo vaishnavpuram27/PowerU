@@ -128,16 +128,49 @@
 .login-sign-forms .signup-form  .title:before{
   width: 20px;
 }
-.login-sign-forms .login-sign-form-content .input-boxes{
+.login-sign-forms .login-sign-form-content .input-boxes .captcha-box {
   margin-top: 30px;
 }
-.login-sign-forms .login-sign-form-content .input-box {
+.login-sign-forms .login-sign-form-content .input-box  {
   display: flex;
   align-items: center;
   height: 50px;
   width: 100%;
   margin: 10px 0;
   position: relative;
+}
+.captcha-box .preview{
+  color: #333;
+  width: 100%;
+  text-align: center;
+  height: 40px;
+  line-height: 40px;
+  letter-spacing: 8px;
+  margin-bottom: 5px;
+  border: 1px solid black;
+  font-family: "monospace";
+}
+.captcha-box .preview span{
+  display:inline-block;
+  user-select: none;
+}
+.captcha-box .captcha-form{
+  display: flex;
+}
+.captcha-box .captcha-form input{
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #333;
+}
+ #captcha-refresh {
+  width: 40px;
+  margin-left: 5px;
+  border: none;
+  outline: none;
+  background-color: #333;
+  color: #eee;
+  cursor: pointer;
+
 }
 .login-sign-form-content .input-box input{
   height: 100%;

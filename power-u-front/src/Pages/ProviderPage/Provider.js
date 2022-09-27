@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 import './ProviderPage.css';
 import {Tabs,Tab} from 'react-bootstrap'
 
+import AddBattery from './AddBattery';
+import BatteriesInfoPro from './BatteriesInfoPro';
+
 
 function Provider() {
   const [click, setClick] = useState(false);
@@ -38,25 +41,13 @@ function Provider() {
 
       </nav>
       <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example" className="mb-3">
-        <Tab eventKey="customer-details" title="Customer Details">
+        <Tab eventKey="customer-details" title=" Add Battery">
           {/* <AdminCus /> */}
-          hello pro
+          <AddBattery/>
         </Tab>
-        <Tab eventKey="pro-verify" title="Professional Verification">
+        <Tab eventKey="pro-verify" title="Batteries Information">
         {/* <AdminPro /> */}
-        hellofsd pro
-        </Tab>
-        <Tab eventKey="customer-req" title="Customer Requests" >
-        {/* <AdminContact /> */}
-        Customer pro
-        </Tab>
-        <Tab eventKey="pro-req" title="Professional Requests">
-        {/* <AdminProContact /> */}
-        provider pro
-        </Tab>
-        <Tab eventKey="customer-trans" title="Transactions" >
-        {/* <Transactions /> */}
-        Transactions pro
+        <BatteriesInfoPro/>
         </Tab>
       </Tabs>
     </div>
