@@ -5,6 +5,7 @@ import {Tabs,Tab} from 'react-bootstrap'
 import NewReg from './NewReg';
 import CustomerCards from './CustomerCards';
 import BatteriesInfo from './BatteriesInfo';
+import ProviderCards from './ProviderCards';
 
 
 function AdminPage() {
@@ -52,9 +53,9 @@ function AdminPage() {
 
         <BatteriesInfo/>
         </Tab>
-        <Tab eventKey="pro-req" title="Professional Requests">
+        <Tab eventKey="pro-req" title="Provider Details">
         {/* <AdminProContact /> */}
-        provider
+        <ProviderCards />
         </Tab>
         <Tab eventKey="customer-trans" title="Transactions" >
         {/* <Transactions /> */}

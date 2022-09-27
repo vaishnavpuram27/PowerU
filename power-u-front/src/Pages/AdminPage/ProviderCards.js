@@ -35,7 +35,7 @@ const [modalShow, setModalShow] = React.useState(false);
 
 
     return(
-        <Card style={{margin : "5px"}}>
+        <Card  style={{margin : "5px"}}>
                 <Card.Body >
                     <Card.Title>{props.item.name}</Card.Title>
                     <Card.Text>Email: {props.item.email}</Card.Text>
@@ -46,20 +46,26 @@ const [modalShow, setModalShow] = React.useState(false);
                         onHide={() => setModalShow(false)}
                         item = {props.item}
                     />
+                    <Button variant="danger" style={{marginLeft:"5px"}}>Delete</Button>
                 </Card.Body>
             </Card>
     );
 }
-function CustomerCards() {
+function ProviderCards() {
     const userData = [
         {
-            name : "vai",
-            email: "vasfdsf@gmail.com",
+            name : "Rashmi Corp",
+            email: "vasfdsf@rashmi.com",
             phoneNo: "523523523"
         },
         {
-            name : "varu",
-            email: "varu@gmail.com",
+            name : "Nitin Corp",
+            email: "fdsfsd@nithin.com",
+            phoneNo: "5235235235523"
+        },
+        {
+            name : "Sania Corp",
+            email: "vafdsfru@sania.com",
             phoneNo: "5235235235523"
         }
     ]
@@ -87,4 +93,4 @@ function CustomerCards() {
   )
 }
 
-export default CustomerCards
+export default ProviderCards

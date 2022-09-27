@@ -51,7 +51,7 @@ const [modalShow, setModalShow] = React.useState(false);
                         onHide={() => setModalShow(false)}
                         item = {props.item}
                     />
-                    <Button variant='danger'>Delete</Button>
+                    <Button variant='danger' style={{marginLeft:"5px"}}>Delete</Button>
                 </Card.Body>
             </Card>
     );
@@ -81,7 +81,16 @@ function BatteriesInfoPro() {
         />)
      })
   return (
-    <div>{cards}</div>
+    <div style = {{marginLeft : "12%", marginRight : "auto"}}>
+        <div className="container ">
+        <div className='d-flex flex-wrap'>
+       
+             {cards}
+            
+        </div>
+    </div>
+    </div>
+    
   )
 }
 

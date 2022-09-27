@@ -77,7 +77,15 @@ function BatteriesInfo() {
         />)
      })
   return (
-    <div>{cards}</div>
+    <div style = {{marginLeft : "12%", marginRight : "auto"}}>
+        <div className="container ">
+        <div className='d-flex flex-wrap'>
+       
+             {cards}
+            
+        </div>
+    </div>
+    </div>
   )
 }
 
