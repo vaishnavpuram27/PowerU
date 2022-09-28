@@ -6,6 +6,9 @@ import Admin from './Pages/AdminPage/Admin';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Provider from './Pages/ProviderPage/Provider';
 import Error from './Pages/Error';
+import GetUsers from './Pages/GetUsers';
+import Form from './Pages/Form';
+
 function App() {
   return (
     <div className="App">
@@ -24,11 +27,14 @@ function App() {
         </a>
       </header> */}
       <Routes>
+        <Route path='/'exact element={<GetUsers/>}/>
+        <Route path='/form'exact element={<Form/>}/>
+
         <Route path="/admin" exact element={<Admin />} />
         <Route path='/login-signup' exact element={<LoginSignup />} /> 
         <Route path='/provider' exact element={<Provider />} /> 
         <Route path="*" exact element={<Error />} />
-
+        
       </Routes>
       
       

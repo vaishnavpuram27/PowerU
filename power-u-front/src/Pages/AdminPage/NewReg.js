@@ -4,29 +4,43 @@ import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Row from 'react-bootstrap/Row';
 import {React , useState} from 'react';
-import { Formik } from 'formik';
-import * as yup from 'yup';
-// const schema = yup.object().shape({
-//   firstName: yup.string().required(),
-//   lastName: yup.string().required(),
-//   username: yup.string().required(),
-//   city: yup.string().required(),
-//   state: yup.string().required(),
-//   zip: yup.string().required(),
-//   terms: yup.bool().required().oneOf([true], 'Terms must be accepted'),
-// });
+import{CREATE_PROVIDER} from '../../GraphQL/Mutations'
+import { useMutation } from '@apollo/client';
+
+
 
 function NewReg() {
     const [validated, setValidated] = useState(false);
+    const [provider_Name ,setProviderName] = useState("");
+    const [provider_Email ,setProviderEmail] = useState("");
+    const [provider_Password ,setProviderPassword] = useState("");
+    const [add_provider,{error}]  = useMutation(CREATE_PROVIDER);
+
 
     const handleSubmit = (event) => {
+      event.preventDefault();
       const form = event.currentTarget;
       if (form.checkValidity() === false) {
         event.preventDefault();
         event.stopPropagation();
       }
-  
+      else{
       setValidated(true);
+      add_provider({
+        variables:{
+            provider:{
+                provider_Email:provider_Email,
+                provider_Name:provider_Name,
+                provider_Password:provider_Password
+            
+              }
+        }
+    });
+    alert("Provider added into the database")
+  }
+    if(error){
+        console.log(error);
+    }
     };
   
     return (
@@ -43,6 +57,8 @@ function NewReg() {
               required
               type="text"
               placeholder="Provider name"
+            onChange={(e)=> setProviderName(e.target.value)}
+
             //   defaultValue="Mark"
             />
             <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
@@ -59,6 +75,8 @@ function NewReg() {
               required
               type="email"
               placeholder="Email"
+            onChange={(e)=> setProviderEmail(e.target.value)}
+
             //   defaultValue="Mark"
             />
             <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
@@ -75,6 +93,8 @@ function NewReg() {
               required
               type="password"
               placeholder="Password"
+            onChange={(e)=> setProviderPassword(e.target.value)}
+
             //   defaultValue="Mark"
             />
             <Form.Control.Feedback>Looks good!</Form.Control.Feedback>

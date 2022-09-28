@@ -30,7 +30,7 @@ function AdminPage() {
           
           <li className='nav-item'>
             <Link
-              to='/admin'
+              to='/'
               className='nav-links'
               onClick={closeMobileMenu}
             >

@@ -26,7 +26,7 @@ function Login() {
         }
         
         function initCaptcha() {
-            console.log(fonts.length)
+            // console.log(fonts.length)
             
             var btn =document.getElementById("captcha-refresh");
             btn.addEventListener("click",function(){

@@ -4,15 +4,47 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
-import { ApolloClient, InMemoryCache, ApolloProvider, gql } from '@apollo/client';
-
+import { ApolloClient, InMemoryCache, ApolloProvider, HttpLink,from,} from '@apollo/client';
+import {onError} from '@apollo/client/link/error'
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <BrowserRouter>
 
-    <App />
+const errorLink = onError(({graphqlErrors,networkError})=>{
+  if(graphqlErrors){
+    graphqlErrors.map(({message,location,path})=>{
+      alert(`Graphql error ${message}`);
+    });
+  }
+})
+const link = from([
+  errorLink,
+  new HttpLink({uri:"https://localhost:5001/ui/playground"}),
+])
+// const aspLink = from([
+//   errorLink,
+//   new HttpLink({uri:"https://poweruproject.azurewebsites.net/graphql"}),
+// ])
+const aspLink = from([
+  errorLink,
+  new HttpLink({uri:"https://localhost:5001/graphql"}),
+])
+const client  = new ApolloClient({
+   cache: new InMemoryCache(),
+   link:link
+});
+const aspClient  = new ApolloClient({
+  cache: new InMemoryCache(),
+  link:aspLink
+});
+root.render(
   
-  </BrowserRouter>
+    <BrowserRouter>
+    <ApolloProvider client={aspClient}>
+
+<App />
+</ApolloProvider>
+</BrowserRouter>
+  
+  
 );
 
 // If you want to start measuring performance in your app, pass a function
