@@ -56,7 +56,7 @@
   position: absolute;
   height: 100%;
   width: 100%;
-  background: #191919;
+  background:black;
   
   opacity: 1;
   z-index: 12;
@@ -67,7 +67,7 @@
   position: absolute;
   height: 100%;
   width: 100%;
-  background: #191919;
+  background:black;
   
   opacity: 1;
   z-index: 12;
@@ -106,7 +106,6 @@
   font-size: 15px;
   font-weight: 500;
   backface-visibility: hidden;
-
 } */
 .login-sign-container .login-sign-forms{
   height: 100%;
@@ -159,8 +158,9 @@
   line-height: 40px;
   letter-spacing: 8px;
   margin-bottom: 5px;
-  border: 1px solid black;
+  border: 1px solid grey;
   font-family: "monospace";
+  
 }
 .captcha-box .preview span{
   display:inline-block;
@@ -221,14 +221,15 @@
 }
 .login-sign-forms .login-sign-form-content .button input {
   color: #fff;
-  background: #191919;
+  background: #0d6efd;
   border-radius: 6px;
   padding: 0;
   cursor: pointer;
   transition: all 0.4s ease;
+  border-bottom:none ;
 }
 .login-sign-forms .login-sign-form-content .button input:hover {
-  background: #423F3E;
+  background: #457b9d;
 }
 .login-sign-forms .login-sign-form-contentt label{
   color: #423F3E;

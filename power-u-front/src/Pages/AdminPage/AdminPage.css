@@ -1,16 +1,21 @@
+body{
+  width: 100%;
+  background-color: white;
+    
+}
 .admin-navbar {
-    background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);
-    height: 80px;
+    height: 70px;
     display: flex;
-    justify-content: center;
     align-items: baseline;
     font-size: 1.2rem;
     width: 100%;
+    background-color: #a2d2ff;
+
   }
   
   
   .admin-navbar-logo {
-    color: #fff;
+    color: black;
     justify-self: start;
     /* margin-left: 20px; */
     cursor: pointer;
@@ -25,30 +30,22 @@
   .fa-firstdraft {
     margin-left: 0.5rem;
     font-size: 1.6rem;
-  }
-  .nav-tabs{
-    margin-left: 20px ;
-    margin-right: 20px ;
-  
+    margin-top: 0%;
   }
   .tab-content{
     margin: 30px;
   }
   .nav-menu {
     display: grid;
-    grid-template-columns: repeat(5, auto);
-    grid-gap: 10px;
     list-style: none;
     text-align: center;
-    width: 70vw;
-    justify-content: end;
-    margin-right: 2rem;
+    margin-right: 1%;
   }
   
   .nav-item {
     display: flex;
     align-items: center;
-    height: 80px;
+    height: 70px;
   }
   
   .nav-links {
@@ -158,3 +155,10 @@
       display: none;
     }
   }
+
+
+  /* .background{
+    background-color: #457b9d;
+    width: 100%;
+    height: 100%;
+  } */

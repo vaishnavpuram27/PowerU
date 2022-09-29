@@ -3,9 +3,10 @@ import Card from "react-bootstrap/Card/"
 import Button from "react-bootstrap/Button/"
 import  Modal  from "react-bootstrap/Modal";
 import products from "./products.json";
-import { GET_BATTERIES_BY_EMAIL } from '../../GraphQL/Queries';
+import { LOAD_BATTERIES } from '../../GraphQL/Queries';
 import {useQuery,useLazyQuery} from '@apollo/client';
 import { useEffect } from 'react';
+import battery from "./battery.jpeg"
 function MyVerticallyCenteredModal(props) {
     // console.log(props)
     return (
@@ -44,6 +45,7 @@ const [modalShow, setModalShow] = React.useState(false);
     return(
         <Card style={{margin : "5px"}}>
         <Card.Body >
+        <center><Card.Img variant='top' src={battery} style={{height:"125px"}}/></center>
             <Card.Title>{props.item.battery_Brand}</Card.Title>
             <Card.Text>Provider : {props.item.battery_Provider_Email}</Card.Text>
             <Card.Text>Price: ₹{props.item.battery_Price}</Card.Text>
@@ -60,33 +62,55 @@ const [modalShow, setModalShow] = React.useState(false);
     </Card>
     );
 }
-function BatteriesInfoPro() {
-    const {error,loading,data} = useQuery(GET_BATTERIES_BY_EMAIL);
-    const [fetchData,{data:getBatteriesById,error:errorBattery}] = useLazyQuery(GET_BATTERIES_BY_EMAIL)
-    useEffect(()=>{
-        fetchData({variables:{
-            mail: "Wron@email.com"
-        }})
-    },[])
+function BatteriesInfoPro(props) {
+    const {error,loading,data} = useQuery(LOAD_BATTERIES);
+
     var products =[]
+
     if(loading) return <p>loading</p>
+
     if(error)  return <p>error</p>
-    
-    
+
+   
+
+   
+
     if(data){
+
         products = data.get_all_batteries;
+
     }
-  
+
+   
+
+
+
     var arr  = [];
+
  for(let i  = 0 ;i<products.length;i++){
-    arr.push(products[i])
+
+    if(products[i].battery_Provider_Email===props.loggedMail){
+
+        arr.push(products[i])
+
+    }
+
+   
+
  }
+
  arr.reverse();
+
     const cards = arr.map(item=>{
+
         return( <Cards
+
             key={item._id}
+
             item={item}
+
         />)
+
      })
   return (
     <div style = {{marginLeft : "12%", marginRight : "auto"}}>

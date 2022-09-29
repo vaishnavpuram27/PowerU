@@ -3,7 +3,7 @@ import { Card, Form, Row, Col, InputGroup, FormControl, Button } from "react-boo
 import {ADD_BATTERY} from "../../GraphQL/Mutations"
 import { useMutation } from "@apollo/client";
 
-function AddBattery() {
+function AddBattery(props) {
 
     const [battery_Id ,setbatteryid] = useState("");
     const [battery_Brand ,setbatterybrand] = useState("");
@@ -18,21 +18,21 @@ function AddBattery() {
     const handleSubmit = (event) => {
       event.preventDefault();
 
-    //   add_battery({
-    //     variables:{
+      add_battery({
+        variables:{
             
-    //             battery:{
-    //           battery_Id: battery_Id,
-    //           battery_Brand:battery_Brand,
-    //           battery_Capacity:parseInt(battery_Capacity),
-    //           battery_Price:parseInt(battery_Price),
-    //           battery_Count:parseInt(battery_Count),
-    //           battery_Charge_status:battery_Charge_status,
-    //           battery_Provider_Email:battery_Provider_Email
-    //             }
+                battery:{
+              battery_Id: battery_Id,
+              battery_Brand:battery_Brand,
+              battery_Capacity:parseInt(battery_Capacity),
+              battery_Price:parseInt(battery_Price),
+              battery_Count:parseInt(battery_Count),
+              battery_Charge_status:battery_Charge_status,
+              battery_Provider_Email:battery_Provider_Email
+                }
               
-    //     }
-    // });
+        }
+    });
     console.log(battery_Id);
     console.log(battery_Capacity);
 
@@ -82,8 +82,9 @@ function AddBattery() {
                     </Form.Label>
                     <Col sm="5">
                         <Form.Control type="email" placeholder="Email" name="battery_Provider_Email"
-                            // onChange={handleInputs}
-                    onChange={(e)=> setProviderEmail(e.target.value)}
+                            defaultValue={props.loggedMail}
+                    // onChange={(e)=> setProviderEmail(e.target.value)}
+                    readOnly
 
                         />
                     </Col>
@@ -132,9 +133,11 @@ function AddBattery() {
         </Card>  
        
         <br />
-        <Button variant="success" size="lg" 
-        onClick={handleSubmit}
-        >Submit</Button>
+        <div className="button input-box">
+                    <input type="button" value="Add Battery" 
+                    onClick={handleSubmit}
+                     />
+                </div>
     </Form>
 
 </div>

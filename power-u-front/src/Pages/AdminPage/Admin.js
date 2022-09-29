@@ -1,13 +1,12 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import './AdminPage.css';
-import {Tabs,Tab} from 'react-bootstrap'
-import NewReg from './NewReg';
-import CustomerCards from './CustomerCards';
-import BatteriesInfo from './BatteriesInfo';
-import ProviderCards from './ProviderCards';
-
-
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import "./AdminPage.css";
+import { Tabs, Tab } from "react-bootstrap";
+import NewReg from "./NewReg";
+import CustomerCards from "./CustomerCards";
+import BatteriesInfo from "./BatteriesInfo";
+import ProviderCards from "./ProviderCards";
+import logo from '../logo.png';
 function AdminPage() {
   const [click, setClick] = useState(false);
   // const [dropdown, setDropdown] = useState(false);
@@ -15,51 +14,55 @@ function AdminPage() {
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
 
-
-
   return (
-    <div className='admin-page'>
-      <nav className='admin-navbar'>
-        <Link to='/admin' className='admin-navbar-logo' onClick={closeMobileMenu}>
+    <div className="admin-page">
+      <nav className="admin-navbar">
+      <img
+              alt=""
+              src={logo}
+              width="50"
+              height="50"
+              style={{marginTop:"1%", marginRight:"1%",marginLeft:"1%"}}
+            />
+        <Link
+          to="/admin"
+          className="admin-navbar-logo"
+          onClick={closeMobileMenu}
+        >
           PowerU
         </Link>
-        <div className='menu-icon' onClick={handleClick}>
-          <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
+        <div className="menu-icon" onClick={handleClick}>
+          <i className={click ? "fas fa-times" : "fas fa-bars"} />
         </div>
-        <ul className={click ? 'nav-menu active' : 'nav-menu'}>
-          
-          <li className='nav-item'>
-            <Link
-              to='/'
-              className='nav-links'
-              onClick={closeMobileMenu}
-            >
+        <ul className={click ? "nav-menu active" : "nav-menu"} style={{marginTop:"0%"}}>
+          <li className="nav-item">
+            <Link to="/admin" className="nav-links" onClick={closeMobileMenu} >
               Log Out
             </Link>
           </li>
-
         </ul>
-
       </nav>
-      <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example" className="mb-3">
+      <Tabs
+        defaultActiveKey="profile"
+        id="uncontrolled-tab-example"
+        className="mb-3"
+      >
         <Tab eventKey="customer-details" title="Customer Details">
-
           <CustomerCards />
         </Tab>
         <Tab eventKey="pro-verify" title="Provider Registration">
-        <NewReg/>
+          <NewReg />
         </Tab>
-        <Tab eventKey="customer-req" title="Batteries Information" >
-
-        <BatteriesInfo/>
+        <Tab eventKey="customer-req" title="Batteries Information">
+          <BatteriesInfo />
         </Tab>
         <Tab eventKey="pro-req" title="Provider Details">
-        {/* <AdminProContact /> */}
-        <ProviderCards />
+          {/* <AdminProContact /> */}
+          <ProviderCards />
         </Tab>
-        <Tab eventKey="customer-trans" title="Transactions" >
-        {/* <Transactions /> */}
-        Transactions
+        <Tab eventKey="customer-trans" title="Transactions">
+          {/* <Transactions /> */}
+          Transactions
         </Tab>
       </Tabs>
     </div>

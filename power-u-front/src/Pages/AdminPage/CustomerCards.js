@@ -4,6 +4,7 @@ import Button from "react-bootstrap/Button/"
 import  Modal  from "react-bootstrap/Modal";
 import {useQuery} from '@apollo/client';
 import {LOAD_CUSTOMERS} from '../../GraphQL/Queries';
+import images from './images.png'
 
 function MyVerticallyCenteredModal(props) {
     // console.log(props)
@@ -40,6 +41,8 @@ const [modalShow, setModalShow] = React.useState(false);
     return(
         <Card style={{margin : "5px"}}>
                 <Card.Body >
+                <center><Card.Img variant='top' src={images} /></center>
+
                     <Card.Title>{props.item.cust_Name}</Card.Title>
                     <Card.Text>Email: {props.item.cust_Email}</Card.Text>
                     {/* <Card.Text>Phone Number: {props.item.phoneNo}</Card.Text> */}

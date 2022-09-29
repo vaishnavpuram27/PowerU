@@ -5,6 +5,7 @@ import  Modal  from "react-bootstrap/Modal";
 import{LOAD_PROVIDERS} from '../../GraphQL/Queries';
 import{REMOVE_PROVIDER} from '../../GraphQL/Mutations'
 import {useQuery,gql, useMutation} from '@apollo/client';
+import download from './download.png'
 
 
 function MyVerticallyCenteredModal(props) {
@@ -66,6 +67,8 @@ function ProviderCards() {
             return(
                 <Card  style={{margin : "5px"}}>
                         <Card.Body >
+                    <center><Card.Img variant='top' src={download} /></center>
+
                             <Card.Title>{props.item.provider_Name}</Card.Title>
                             <Card.Text>Email: {props.item.provider_Email}</Card.Text>
                             {/* <Card.Text>Phone Number: {props.item.phoneNo}</Card.Text> */}

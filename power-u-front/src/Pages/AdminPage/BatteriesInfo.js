@@ -2,6 +2,7 @@ import React from 'react'
 import Card from "react-bootstrap/Card/"
 import Button from "react-bootstrap/Button/"
 import  Modal  from "react-bootstrap/Modal";
+import battery from './battery.png'
 
 import { LOAD_BATTERIES } from '../../GraphQL/Queries';
 import {useQuery} from '@apollo/client';
@@ -45,11 +46,10 @@ const [modalShow, setModalShow] = React.useState(false);
     return(
         <Card style={{margin : "5px"}}>
                 <Card.Body >
+                    <center><Card.Img variant='top' src={battery} style={{height:"125px"}} /></center>
                     <Card.Title>{props.item.battery_Brand}</Card.Title>
                     <Card.Text>Provider : {props.item.battery_Provider_Email}</Card.Text>
-                    <Card.Text>Price: ₹{props.item.battery_Price}</Card.Text>
-                    <Card.Text>Count: {props.item.battery_Count}</Card.Text>
-                    <Card.Text>Capacity: {props.item.battery_Capacity}Kwh</Card.Text>
+                    
                     
                     <Button variant="primary" onClick={() => setModalShow(true)}>More Information</Button>
                     <MyVerticallyCenteredModal

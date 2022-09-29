@@ -19,14 +19,14 @@ const link = from([
   errorLink,
   new HttpLink({uri:"https://localhost:5001/ui/playground"}),
 ])
-// const aspLink = from([
-//   errorLink,
-//   new HttpLink({uri:"https://poweruproject.azurewebsites.net/graphql"}),
-// ])
 const aspLink = from([
   errorLink,
-  new HttpLink({uri:"https://localhost:5001/graphql"}),
+  new HttpLink({uri:"https://poweruproject.azurewebsites.net/graphql"}),
 ])
+// const aspLink = from([
+//   errorLink,
+//   new HttpLink({uri:"https://localhost:5001/graphql"}),
+// ])
 const client  = new ApolloClient({
    cache: new InMemoryCache(),
    link:link

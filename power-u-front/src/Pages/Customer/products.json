@@ -1,0 +1,61 @@
+[{
+    "title": "Trever",
+    "image": "/images/battery.jpeg",
+    "id": "battery",
+    "description": "2000mah fully charged premium battery",
+    "price": "195"
+  },
+
+  {
+    "title": "Emptek",
+    "image": "/images/battery.jpeg",
+    "id": "battery",
+    "description": "2000mah fully charged premium battery",
+    "price": "275"
+  },
+  {
+    "title": "Tronny",
+    "image": "/images/battery.png",
+    "id": "battery",
+    "description": "1000mah fully charged premium battery",
+    "price": "200"
+  },
+
+  {
+    "title": "Tronny",
+    "image": "/images/battery.png",
+    "id": "battery",
+    "description": "1000mah fully charged premium battery",
+    "price": "100"
+  },
+  {
+    "title": "Emptek",
+    "image": "/images/battery.jpeg",
+    "id": "battery",
+    "description": "2000mah fully charged premium battery",
+    "price": "150"
+  },
+
+  {
+    "title": "Tronny",
+    "image": "/images/battery.png",
+    "id": "battery",
+    "description": "1000mah fully charged premium battery",
+    "price": "265"
+  },
+  {
+    "title": "Tronny",
+    "image": "/images/battery.png",
+    "id": "battery",
+    "description": "1000mah fully charged premium battery",
+    "price": "233"
+  },
+
+  {
+    "title": "Trever",
+    "image": "/images/battery.jpeg",
+    "id": "battery",
+    "description": "2000mah fully charged premium battery",
+    "price": "265"
+  }
+]
